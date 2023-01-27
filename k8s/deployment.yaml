@@ -44,7 +44,7 @@ kind: Deployment
 metadata:
   name: web
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: web
@@ -56,10 +56,11 @@ spec:
         prometheus.io/scrape: "true"
         prometheus.io/ports: "8080"
         prometheus.io/path: "/metrics"
+
     spec:
       containers:
         - name: web
-          image: sergiofeitosa/kube-news:5
+          image: sergiofeitosa/kube-news:{{TAG}}
           ports:
           - containerPort: 8080
           env:
