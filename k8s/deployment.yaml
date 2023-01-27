@@ -44,7 +44,7 @@ kind: Deployment
 metadata:
   name: web
 spec:
-  replicas: 2
+  replicas: 5
   selector:
     matchLabels:
       app: web
@@ -76,7 +76,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: web
+  name: web2
 spec:
   selector:
     app: web
